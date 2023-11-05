@@ -17,6 +17,7 @@ import {
     score: number;
   }
   
+
   const globalState: IGlobalState = {
     snake: [
       { x: 580, y: 300 },

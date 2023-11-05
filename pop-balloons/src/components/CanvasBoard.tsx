@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import balloonImageSrc from "./balloon.png";
+
 import { useDispatch, useSelector } from "react-redux";
 import {
   increaseSnake,
@@ -13,7 +15,6 @@ import {
   scoreUpdates,
   stopGame,
 } from "../store/actions";
-
 import { IGlobalState } from "../store/reducers";
 import {
   clearBoard,
@@ -130,6 +131,17 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
     clearBoard(context);
     drawObject(context, snake1, "#91C483");
     drawObject(context, [pos], "#676FA3"); //Draws object randomly
+
+    // load a balloon image and draw it on the canvas
+    let img = new Image();
+    img.src = balloonImageSrc;
+    img.onload = function () {
+      context?.drawImage(img, 0, 0);
+    };
+    img.onerror = function () {
+      console.log('Error loading image:' + img.src);
+    };
+
 
     //When the object is consumed
     if (snake1[0].x === pos?.x && snake1[0].y === pos?.y) {
