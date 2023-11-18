@@ -52,7 +52,6 @@ const TextButtons = () => {
 
 
     // get remaining elements
-    console.log(answers);
 
 
 

@@ -14,6 +14,7 @@ import {
   RESET_SCORE,
   scoreUpdates,
   stopGame,
+  decrementTime,
 } from "../store/actions";
 import { IGlobalState } from "../store/reducers";
 import {
@@ -124,6 +125,8 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
       dispatch(scoreUpdates(INCREMENT_SCORE));
     }
   }, [isConsumed, pos, height, width, dispatch]);
+
+  
 
   useEffect(() => {
     //Draw on canvas each time

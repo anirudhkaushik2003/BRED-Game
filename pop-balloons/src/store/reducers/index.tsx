@@ -3,6 +3,9 @@ import {
   INCREASE_SNAKE,
   DECREMENT_SCORE,
   INCREMENT_SCORE,
+  INCREMENT_OPP_SCORE,
+  DECREMENT_OPP_SCORE,
+  UPDATE_OPP_SCORE,
   ISnakeCoord,
   LEFT,
   RESET,
@@ -10,12 +13,15 @@ import {
   RIGHT,
   SET_DIS_DIRECTION,
   UP,
+  DECREMENT_TIME
 } from "../actions";
 
 export interface IGlobalState {
   snake: ISnakeCoord[] | [];
   disallowedDirection: string;
   score: number;
+  oppScore: number;
+  timeLeft: number;
 }
 
 
@@ -29,6 +35,8 @@ const globalState: IGlobalState = {
   ],
   disallowedDirection: "",
   score: 0,
+  oppScore: 0,
+  timeLeft: 120,
 };
 const gameReducer = (state = globalState, action: any) => {
   switch (action.type) {
@@ -46,6 +54,12 @@ const gameReducer = (state = globalState, action: any) => {
       return {
         ...state,
         snake: newSnake,
+      };
+    }
+    case DECREMENT_TIME: {
+      return {
+        ...state,
+        timeLeft: state.timeLeft - 1
       };
     }
 
@@ -91,9 +105,29 @@ const gameReducer = (state = globalState, action: any) => {
         ...state,
         score: state.score - 1,
       };
+
+    case INCREMENT_OPP_SCORE:
+      return {
+        ...state,
+        score: state.oppScore + 1,
+      };
+    case DECREMENT_OPP_SCORE:
+      return {
+        ...state,
+        score: state.oppScore - 1,
+      };
+
+    case UPDATE_OPP_SCORE:
+      return {
+        ...state,
+        oppScore: action.payload,
+      }
+
     default:
       return state;
   }
 };
+
+
 
 export default gameReducer;

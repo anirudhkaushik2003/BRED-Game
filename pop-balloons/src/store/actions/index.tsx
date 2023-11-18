@@ -17,6 +17,12 @@ export const STOP_GAME = "STOP_GAME";
 export const INCREASE_SNAKE = "INCREASE_SNAKE";
 export const INCREMENT_SCORE = "INCREMENT_SCORE";
 export const DECREMENT_SCORE = "DECREMENT_SCORE";
+export const INCREMENT_OPP_SCORE = "INCREMENT_OPP_SCORE";
+export const DECREMENT_OPP_SCORE = "DECREMENT_OPP_SCORE";
+export const UPDATE_OPP_SCORE = "UPDATE_OPP_SCORE"; 
+
+export const DECREMENT_TIME = 'DECREMENT_TIME';
+
 
 export const RESET_SCORE = "RESET_SCORE";
 export interface ISnakeCoord {
@@ -47,4 +53,13 @@ export const increaseSnake = () => ({
 
 export const scoreUpdates = (type: string) => ({
   type
+});
+
+export const decrementTime = () => ({
+  type: DECREMENT_TIME
+});
+
+export const oppScoreUpdates = (type: string, value: number) => ({
+  type,
+  payload: value
 });
