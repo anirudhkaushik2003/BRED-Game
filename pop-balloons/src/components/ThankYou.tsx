@@ -31,7 +31,9 @@ const ThankYou = () => {
   const game3_opp_m = useSelector((state: IGlobalState) => state.game3_opp);
   const game4_opp_m = useSelector((state: IGlobalState) => state.game4_opp);
 
-  const postData = {firstName: firstName_m, lastName: lastName_m, game1: game1_m, game2: game2_m, game3: game3_m, game4: game4_m, game2_opp: game2_opp_m, game3_opp: game3_opp_m, game4_opp: game4_opp_m };
+  const modeOrder_m = useSelector((state: IGlobalState) => state.modeOrder);
+
+  const postData = {firstName: firstName_m, lastName: lastName_m, game1: game1_m, game2: game2_m, game3: game3_m, game4: game4_m, game2_opp: game2_opp_m, game3_opp: game3_opp_m, game4_opp: game4_opp_m, modeOrder: modeOrder_m};
 
   useEffect(() => {
     (async () => {

@@ -30,6 +30,8 @@ const Instruction1 = () => {
         <br></br>
         Your opponent's score will be updated every second.
       </p>
+      <Heading as="h6" size="lg">
+        Please Do not Refresh the page, otherwise you will have to restart the game
     </Container >
   );
 };

@@ -15,6 +15,8 @@ export interface IPost {
     game2_opp: number[];
     game3_opp: number[];
     game4_opp: number[];
+
+    modeOrder: number[];
 }
 
 export const createPost = (newPost: IPost) => axios.post(url, newPost);

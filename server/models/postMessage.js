@@ -12,6 +12,8 @@ const postSchema = mongoose.Schema({
     game3_opp: [Number],
     game4_opp: [Number],
 
+    modeOrder: [Number],
+
     
 });
 

@@ -141,6 +141,8 @@ export interface IPost {
   game2_opp: number[];
   game3_opp: number[];
   game4_opp: number[];
+
+  modeOrder: number[];
 };
 
 export const createPost = (post:  IPost ) => async (dispatch: any) => {
