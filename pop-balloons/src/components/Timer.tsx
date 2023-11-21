@@ -12,6 +12,10 @@ import {
   decrementTime,
   resetScore,
   incrementModeIndex,
+  save_opp_score,
+  save_score,
+  SAVE_SCORE,
+  SAVE_OPP_SCORE
 } from "../store/actions";
 
 const Timer = () => {
@@ -23,11 +27,26 @@ const Timer = () => {
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
 
+  const score = useSelector((state: IGlobalState) => state.score);
+  const oppScore = useSelector((state: IGlobalState) => state.oppScore);
+
+  const game2 = useSelector((state: IGlobalState) => state.game2);
+  const game1 = useSelector((state: IGlobalState) => state.game1);
+
+
+
+
   useEffect(() => {
-    
+
     const intervalId = setInterval(() => {
       if ((step === 3 || step === 6 || step === 9 || step === 12)) {
+        dispatch(save_score(SAVE_SCORE));
+
         dispatch(decrementTime());
+        if (step != 3) {
+          dispatch(save_opp_score(SAVE_OPP_SCORE));
+        }
+
       }
 
     }, 1000);
@@ -41,6 +60,8 @@ const Timer = () => {
       dispatch(incrementStep(INCREMENT_STEP));
       dispatch(resetScore());
       dispatch(incrementModeIndex());
+
+
     }
   }, [timeLeft]);
 

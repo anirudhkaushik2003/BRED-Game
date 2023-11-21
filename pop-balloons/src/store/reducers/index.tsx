@@ -18,6 +18,10 @@ import {
   DECREMENT_STEP,
   SHUFFLE_MODES,
   INCREMENT_MODE_INDEX,
+  SAVE_OPP_SCORE,
+  SAVE_SCORE,
+  SET_FIRST_NAME,
+  SET_LAST_NAME,
 } from "../actions";
 
 export interface IGlobalState {
@@ -30,6 +34,18 @@ export interface IGlobalState {
   modeOrder: number[];
   modes: string[];
   modeIndex: number;
+  game1: number[];
+  game2: number[];
+  game3: number[];
+  game4: number[];
+
+  game2_opp: number[];
+  game3_opp: number[];
+  game4_opp: number[];
+
+  firstName: string;
+  lastName: string;
+
 }
 
 const duration = 120;
@@ -49,6 +65,17 @@ const globalState: IGlobalState = {
   modeOrder: [0, 1, 2],
   modes: ["worse", "comparible", "better"],
   modeIndex: 0,
+  game1: [],
+  game2: [],
+  game3: [],
+  game4: [],
+
+  game2_opp: [],
+  game3_opp: [],
+  game4_opp: [],
+
+  firstName: "",
+  lastName: "",
 };
 const gameReducer = (state = globalState, action: any) => {
   switch (action.type) {
@@ -188,6 +215,79 @@ const gameReducer = (state = globalState, action: any) => {
           ...state,
         };
       }
+
+    case SAVE_SCORE:
+      if (state.step === 3) {
+        return {
+          ...state,
+          game1: [...state.game1, state.score],
+        };
+      }
+      else if (state.step === 6) {
+        return {
+          ...state,
+          game2: [...state.game2, state.score],
+        };
+      }
+
+      else if (state.step === 9) {
+        return {
+          ...state,
+          game3: [...state.game3, state.score],
+        };
+      }
+      else if (state.step === 12) {
+        return {
+          ...state,
+          game4: [...state.game4, state.score],
+        };
+      }
+      else {
+        return {
+          ...state,
+        };
+      }
+
+    case SAVE_OPP_SCORE:
+      if (state.step === 6) {
+        return {
+          ...state,
+          game2_opp: [...state.game2_opp, state.oppScore],
+        };
+      }
+
+      else if (state.step === 9) {
+        return {
+          ...state,
+          game3_opp: [...state.game3_opp, state.oppScore],
+        };
+      }
+      else if (state.step === 12) {
+        return {
+          ...state,
+          game4_opp: [...state.game4_opp, state.oppScore],
+        };
+      }
+      else {
+        return {
+          ...state,
+        };
+      }
+
+    case SET_FIRST_NAME:
+      console.log(action.payload);
+      return {
+        ...state,
+        firstName: action.payload,
+      };
+
+    case SET_LAST_NAME:
+      return {
+        ...state,
+        lastName: action.payload,
+      };
+
+
 
     default:
       return state;

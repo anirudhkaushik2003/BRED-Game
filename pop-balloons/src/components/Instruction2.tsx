@@ -15,21 +15,6 @@ const Instruction2 = () => {
   const dispatch = useDispatch();
   const step = useSelector((state: IGlobalState) => state.step);
 
-  useEffect(() => {
-    if (step === 2) {
-      const randomDuration = Math.floor(Math.random() * 5000) + 5000; // Random duration between 5s and 10s
-      // const randomDuration = Math.floor(Math.random() * 2000); // Random duration between 5s and 10s
-
-      const timeoutId = setTimeout(() => {
-        dispatch(incrementStep(INCREMENT_STEP));
-      }, randomDuration);
-
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }
-  }, [dispatch]);
-
   return (
     <Container maxW="container.lg" centerContent>
       <Heading as="h6" size="lg">

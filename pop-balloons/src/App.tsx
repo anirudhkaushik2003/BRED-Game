@@ -60,7 +60,7 @@ const App = () => {
       {step == 12 ? <Game /> : null}
       {step == 13 ? <ThankYou /> : null}
 
-      {(step === 0 || step === 1 || step === 2 || step === 4 || step === 7 || step === 10) ?
+      {(step === 0  || step === 2 || step === 4 || step === 7 || step === 10) ?
         <Flex justifyContent="space-between" position="fixed" bottom={0}  right={0} p={4}>
           {/* <Button
             colorScheme='teal'

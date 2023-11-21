@@ -33,6 +33,14 @@ export const INCREMENT_MODE_INDEX = 'INCREMENT_MODE_INDEX';
 export const SHUFFLE_MODES = 'SHUFFLE_MODES';
 
 export const RESET_SCORE = "RESET_SCORE";
+
+export const SAVE_OPP_SCORE = "SAVE_OPP_SCORE";
+export const SAVE_SCORE = "SAVE_SCORE";
+
+export const SET_FIRST_NAME = "SET_FIRST_NAME";
+export const SET_LAST_NAME = "SET_LAST_NAME";
+
+
 export interface ISnakeCoord {
   x: number;
   y: number;
@@ -90,4 +98,23 @@ export const resetScore = () => ({
 
 export const incrementModeIndex = () => ({
   type: INCREMENT_MODE_INDEX
+});
+
+export const save_opp_score = (type: string) => ({
+  type: SAVE_OPP_SCORE,
+});
+
+export const save_score = (type: string) => ({
+  type: SAVE_SCORE,
+});
+
+export const set_first_name = (type: string, value: string) => ({
+  type: SET_FIRST_NAME,
+  payload: value
+});
+
+export const set_last_name = (type: string, value: string) => ({
+  type: SET_LAST_NAME,
+  payload: value
+
 });

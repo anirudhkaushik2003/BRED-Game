@@ -38,9 +38,6 @@ const OppScoreCard = () => {
 
 
 
-    console.log(mode);
-
-
 
     useEffect(() => {
         if ((step === 6 || step === 9 || step === 12)) {
