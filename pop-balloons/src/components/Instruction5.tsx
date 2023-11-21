@@ -15,8 +15,9 @@ const Instruction5 = () => {
     const dispatch = useDispatch();
     const step = useSelector((state: IGlobalState) => state.step);
     useEffect(() => {
-        if (step == 7) {
-            const randomDuration = Math.floor(Math.random() * 10000) + 1000; // Random duration between 1s and 6s
+        if (step == 10) {
+            const randomDuration = Math.floor(Math.random() * 5000) + 5000; // Random duration between 5s and 10s
+
 
             const timeoutId = setTimeout(() => {
                 dispatch(incrementStep(INCREMENT_STEP));
@@ -30,13 +31,8 @@ const Instruction5 = () => {
     return (
         <Container maxW="container.lg" centerContent>
             <Heading as="h6" size="lg">
-                You will now be paired with an opponent (Step 4/4)
+                You will now be paired with an opponent. You will be competing against an opponent. Good luck! (Step 4/4)
             </Heading>
-            <Container maxW="container.lg" centerContent>
-
-                <Spinner height="300px" width="300px"></Spinner>
-                <h3>Searching for opponet</h3>
-            </Container >
         </Container >
 
     );

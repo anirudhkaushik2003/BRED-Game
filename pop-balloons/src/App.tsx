@@ -6,8 +6,11 @@ import Instruction2 from "./components/Instruction2";
 import Instruction3 from "./components/Instruction3";
 import Instruction4 from "./components/Instruction4";
 import Instruction5 from "./components/Instruction5";
+import Login from "./components/Login";
+import ThankYou from "./components/ThankYou";
 import { Button, Stack } from "@chakra-ui/react";
 import { IGlobalState } from "./store/reducers";
+import Search from "./components/Search";
 
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -15,6 +18,8 @@ import {
   INCREMENT_STEP,
   decrementStep,
   incrementStep,
+  shuffleModes,
+  SHUFFLE_MODES,
 } from "./store/actions";
 import { Flex } from "@chakra-ui/layout";
 
@@ -32,26 +37,32 @@ const App = () => {
   }
 
   const handleForward = () => {
-    if (step < 9) {
+    if (step < 13) {
       dispatch(incrementStep(INCREMENT_STEP));
     }
   }
 
+
   return (
     <ChakraProvider>
       {step == 0 ? <Instruction1 /> : null}
-      {step == 1 ? <Instruction2 /> : null}
-      {step == 2 ? <Game /> : null}
-      {step == 3 ? <Instruction3 /> : null}
-      {step == 4 ? <Game /> : null}
-      {step == 5 ? <Instruction4 /> : null}
+      {step == 1 ? <Login/> : null}
+      {step == 2 ? <Instruction2 /> : null}
+      {step == 3 ? <Game /> : null}
+      {step == 4 ? <Instruction3 /> : null}
+      {step == 5 ? <Search /> : null}
       {step == 6 ? <Game /> : null}
-      {step == 7 ? <Instruction5 /> : null}
-      {step == 8 ? <Game /> : null}
+      {step == 7 ? <Instruction4 /> : null}
+      {step == 8 ? <Search /> : null}
+      {step == 9 ? <Game /> : null}
+      {step == 10 ? <Instruction5 /> : null}
+      {step == 11 ? <Search /> : null}
+      {step == 12 ? <Game /> : null}
+      {step == 13 ? <ThankYou /> : null}
 
-      {(step > 0) ? null :
-        <Flex justifyContent="space-between" position="fixed" bottom={0} left={0} right={0} p={4}>
-          <Button
+      {(step === 0 || step === 1 || step === 2 || step === 4 || step === 7 || step === 10) ?
+        <Flex justifyContent="space-between" position="fixed" bottom={0}  right={0} p={4}>
+          {/* <Button
             colorScheme='teal'
             height="60px"
             width="200px"
@@ -59,7 +70,7 @@ const App = () => {
           // add flash animation
           >
             Back
-          </Button>
+          </Button> */}
           <Button
             colorScheme='teal'
             height="60px"
@@ -69,7 +80,7 @@ const App = () => {
             Next
           </Button>
 
-        </Flex>
+        </Flex> : null
       }
     </ChakraProvider >
 

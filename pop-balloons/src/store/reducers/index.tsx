@@ -15,7 +15,9 @@ import {
   UP,
   DECREMENT_TIME,
   INCREMENT_STEP,
-  DECREMENT_STEP
+  DECREMENT_STEP,
+  SHUFFLE_MODES,
+  INCREMENT_MODE_INDEX,
 } from "../actions";
 
 export interface IGlobalState {
@@ -25,9 +27,12 @@ export interface IGlobalState {
   oppScore: number;
   timeLeft: number;
   step: number;
+  modeOrder: number[];
+  modes: string[];
+  modeIndex: number;
 }
 
-
+const duration = 120;
 const globalState: IGlobalState = {
   snake: [
     { x: 580, y: 300 },
@@ -39,8 +44,11 @@ const globalState: IGlobalState = {
   disallowedDirection: "",
   score: 0,
   oppScore: 0,
-  timeLeft: 5,
+  timeLeft: duration,
   step: 0,
+  modeOrder: [0, 1, 2],
+  modes: ["worse", "comparible", "better"],
+  modeIndex: 0,
 };
 const gameReducer = (state = globalState, action: any) => {
   switch (action.type) {
@@ -61,23 +69,16 @@ const gameReducer = (state = globalState, action: any) => {
       };
     }
     case DECREMENT_TIME: {
-      if (state.timeLeft == 0 && state.step < 8) {
+      if (state.timeLeft > 0) {
         return {
           ...state,
-          timeLeft: 120, // reset time
-          step: state.step + 1 // move on to next stage
-        };
-      }
-      else if (state.timeLeft == 0) {
-        return {
-          ...state,
-          timeLeft: 120,  // reset time
+          timeLeft: state.timeLeft - 1
         };
       }
       else {
         return {
           ...state,
-          timeLeft: state.timeLeft - 1
+          timeLeft: duration
         };
 
       }
@@ -114,7 +115,11 @@ const gameReducer = (state = globalState, action: any) => {
       };
 
     case RESET_SCORE:
-      return { ...state, score: 0 };
+      return {
+        ...state,
+        score: 0,
+        oppScore: 0,
+      };
 
     case INCREMENT_SCORE:
       return {
@@ -154,6 +159,34 @@ const gameReducer = (state = globalState, action: any) => {
       return {
         ...state,
         step: state.step - 1,
+      }
+
+    case SHUFFLE_MODES:
+      const { modeOrder } = state;
+      const shuffledModeOrder = [...modeOrder];
+
+      // Fisher-Yates algorithm for shuffling the array
+      for (let i = shuffledModeOrder.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledModeOrder[i], shuffledModeOrder[j]] = [shuffledModeOrder[j], shuffledModeOrder[i]];
+      }
+
+      return {
+        ...state,
+        modeOrder: shuffledModeOrder,
+      };
+
+    case INCREMENT_MODE_INDEX:
+      if (state.modeIndex < 2) {
+        return {
+          ...state,
+          modeIndex: state.modeIndex + 1,
+        };
+      }
+      else {
+        return {
+          ...state,
+        };
       }
 
     default:

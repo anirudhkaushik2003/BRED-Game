@@ -11,12 +11,12 @@ import {
   incrementStep,
 } from "../store/actions";
 
-const Instruction2 = () => {
+const Search = () => {
   const dispatch = useDispatch();
   const step = useSelector((state: IGlobalState) => state.step);
 
   useEffect(() => {
-    if (step === 2) {
+    if ((step === 5 || step === 8 || step === 11)) {
       const randomDuration = Math.floor(Math.random() * 5000) + 5000; // Random duration between 5s and 10s
       // const randomDuration = Math.floor(Math.random() * 2000); // Random duration between 5s and 10s
 
@@ -31,12 +31,11 @@ const Instruction2 = () => {
   }, [dispatch]);
 
   return (
-    <Container maxW="container.lg" centerContent>
-      <Heading as="h6" size="lg">
-        We will now benchmark your performance, this is in <b>single player mode</b> (Step 1/4)
-      </Heading>
-    </Container>
+      <Container maxW="container.lg" centerContent>
+        <Spinner height="300px" width="300px" speed="0.9s"></Spinner>
+        <h3>Searching for opponent...</h3>
+      </Container>
   );
 };
 
-export default Instruction2;
+export default Search;

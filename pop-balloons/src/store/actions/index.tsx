@@ -28,6 +28,9 @@ export const DECREMENT_STEP = 'DECREMENT_STEP';
 export const DECREMENT_TIME = 'DECREMENT_TIME';
 export const RESET_TIME = 'RESET_TIME';
 
+export const INCREMENT_MODE_INDEX = 'INCREMENT_MODE_INDEX';
+
+export const SHUFFLE_MODES = 'SHUFFLE_MODES';
 
 export const RESET_SCORE = "RESET_SCORE";
 export interface ISnakeCoord {
@@ -75,4 +78,16 @@ export const incrementStep = (type: string) => ({
 
 export const decrementStep = (type: string) => ({
   type: DECREMENT_STEP
+});
+
+export const shuffleModes = (type: string) => ({
+  type: SHUFFLE_MODES
+});
+
+export const resetScore = () => ({
+  type: RESET_SCORE
+});
+
+export const incrementModeIndex = () => ({
+  type: INCREMENT_MODE_INDEX
 });

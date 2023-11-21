@@ -10,6 +10,8 @@ import {
   incrementStep,
   INCREMENT_STEP,
   decrementTime,
+  resetScore,
+  incrementModeIndex,
 } from "../store/actions";
 
 const Timer = () => {
@@ -24,7 +26,7 @@ const Timer = () => {
   useEffect(() => {
     
     const intervalId = setInterval(() => {
-      if ((step === 2 || step === 4 || step === 6 || step === 8)) {
+      if ((step === 3 || step === 6 || step === 9 || step === 12)) {
         dispatch(decrementTime());
       }
 
@@ -32,6 +34,15 @@ const Timer = () => {
 
     return () => clearInterval(intervalId); // This clears the interval when the component unmounts
   }, []);
+
+  useEffect(() => {
+    if ((step === 3 || step === 6 || step === 9 || step === 12) && (timeLeft === 0)) {
+      dispatch(decrementTime());
+      dispatch(incrementStep(INCREMENT_STEP));
+      dispatch(resetScore());
+      dispatch(incrementModeIndex());
+    }
+  }, [timeLeft]);
 
   return (
     <Heading as="h2" size="md" mt={5} mb={5}> Time Left: {minutes}:{seconds < 10 ? `0${seconds}` : seconds} </Heading>
