@@ -1,27 +1,78 @@
 import { ChakraProvider, Container, Heading } from "@chakra-ui/react";
-import { Provider } from "react-redux";
-import CanvasBoard from "./components/CanvasBoard";
-import ScoreCard from "./components/ScoreCard";
-import store from "./store";
 import "./App.css";
-import TextButtons from "./components/Questions";
-import OppScoreCard from "./components/OppScoreCard";
-import Timer from "./components/Timer";
+import Game from "./components/Game";
+import Instruction1 from "./components/Instruction1";
+import Instruction2 from "./components/Instruction2";
+import Instruction3 from "./components/Instruction3";
+import Instruction4 from "./components/Instruction4";
+import Instruction5 from "./components/Instruction5";
+import { Button, Stack } from "@chakra-ui/react";
+import { IGlobalState } from "./store/reducers";
+
+import { useSelector, useDispatch } from "react-redux";
+import {
+  DECREMENT_STEP,
+  INCREMENT_STEP,
+  decrementStep,
+  incrementStep,
+} from "./store/actions";
+import { Flex } from "@chakra-ui/layout";
 
 const App = () => {
 
+  // const step = store.getState().step;
+  const step = useSelector((state: IGlobalState) => state.step);
+
+  const dispatch = useDispatch();
+
+  const handleBackward = () => {
+    if (step > 0) {
+      dispatch(decrementStep(DECREMENT_STEP));
+    }
+  }
+
+  const handleForward = () => {
+    if (step < 9) {
+      dispatch(incrementStep(INCREMENT_STEP));
+    }
+  }
+
   return (
-    <Provider store={store}>
-      <ChakraProvider>
-        <Container maxW="container.lg" centerContent>
-          <Heading as="h1" size="xl">Basic Maths</Heading>
-          <ScoreCard />
-          <OppScoreCard />
-          <Timer />
-          <TextButtons />
-        </Container>
-      </ChakraProvider>
-    </Provider>
+    <ChakraProvider>
+      {step == 0 ? <Instruction1 /> : null}
+      {step == 1 ? <Instruction2 /> : null}
+      {step == 2 ? <Game /> : null}
+      {step == 3 ? <Instruction3 /> : null}
+      {step == 4 ? <Game /> : null}
+      {step == 5 ? <Instruction4 /> : null}
+      {step == 6 ? <Game /> : null}
+      {step == 7 ? <Instruction5 /> : null}
+      {step == 8 ? <Game /> : null}
+
+      {(step > 0) ? null :
+        <Flex justifyContent="space-between" position="fixed" bottom={0} left={0} right={0} p={4}>
+          <Button
+            colorScheme='teal'
+            height="60px"
+            width="200px"
+            onClick={() => handleBackward()}
+          // add flash animation
+          >
+            Back
+          </Button>
+          <Button
+            colorScheme='teal'
+            height="60px"
+            width="200px"
+            onClick={() => handleForward()}
+          >
+            Next
+          </Button>
+
+        </Flex>
+      }
+    </ChakraProvider >
+
   );
 };
 

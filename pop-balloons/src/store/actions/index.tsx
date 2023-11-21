@@ -21,7 +21,12 @@ export const INCREMENT_OPP_SCORE = "INCREMENT_OPP_SCORE";
 export const DECREMENT_OPP_SCORE = "DECREMENT_OPP_SCORE";
 export const UPDATE_OPP_SCORE = "UPDATE_OPP_SCORE"; 
 
+export const INCREMENT_STEP = 'INCREMENT_STEP';
+export const DECREMENT_STEP = 'DECREMENT_STEP';
+
+
 export const DECREMENT_TIME = 'DECREMENT_TIME';
+export const RESET_TIME = 'RESET_TIME';
 
 
 export const RESET_SCORE = "RESET_SCORE";
@@ -62,4 +67,12 @@ export const decrementTime = () => ({
 export const oppScoreUpdates = (type: string, value: number) => ({
   type,
   payload: value
+});
+
+export const incrementStep = (type: string) => ({
+  type: INCREMENT_STEP
+});
+
+export const decrementStep = (type: string) => ({
+  type: DECREMENT_STEP
 });

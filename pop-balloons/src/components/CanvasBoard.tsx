@@ -24,7 +24,6 @@ import {
   hasSnakeCollided,
   IObjectBody,
 } from "../utils";
-import Instruction from "./Instructions";
 
 export interface ICanvasBoard {
   height: number;
@@ -182,7 +181,6 @@ const CanvasBoard = ({ height, width }: ICanvasBoard) => {
         width={width}
         height={height}
       />
-      <Instruction resetBoard={resetBoard} />
     </>
   );
 };

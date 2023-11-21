@@ -13,7 +13,9 @@ import {
   RIGHT,
   SET_DIS_DIRECTION,
   UP,
-  DECREMENT_TIME
+  DECREMENT_TIME,
+  INCREMENT_STEP,
+  DECREMENT_STEP
 } from "../actions";
 
 export interface IGlobalState {
@@ -22,6 +24,7 @@ export interface IGlobalState {
   score: number;
   oppScore: number;
   timeLeft: number;
+  step: number;
 }
 
 
@@ -36,7 +39,8 @@ const globalState: IGlobalState = {
   disallowedDirection: "",
   score: 0,
   oppScore: 0,
-  timeLeft: 120,
+  timeLeft: 5,
+  step: 0,
 };
 const gameReducer = (state = globalState, action: any) => {
   switch (action.type) {
@@ -121,6 +125,18 @@ const gameReducer = (state = globalState, action: any) => {
       return {
         ...state,
         oppScore: action.payload,
+      }
+
+    case INCREMENT_STEP:
+      return {
+        ...state,
+        step: state.step + 1,
+      }
+
+    case DECREMENT_STEP:
+      return {
+        ...state,
+        step: state.step - 1,
       }
 
     default:
