@@ -85,7 +85,7 @@ const OppScoreCard = () => {
     if ((step === 6 || step === 9 || step === 12)) {
 
         return (
-            <Heading as="h2" size="md" mt={5} mb={5}>Oppo Score: {oppScore}</Heading>
+            <Heading as="h1" size="xl" color="red" mt={5} mb={5}>Oppo Score: {oppScore}</Heading>
         );
     }
     else {

@@ -2,7 +2,7 @@ import { Box, Button, Flex, Heading, Kbd, Stack } from "@chakra-ui/react";
 import { Container } from "@chakra-ui/react";
 
 import { useDispatch } from "react-redux";
-import{
+import {
   shuffleModes,
   SHUFFLE_MODES,
 } from "../store/actions";
@@ -32,6 +32,7 @@ const Instruction1 = () => {
       </p>
       <Heading as="h6" size="lg">
         Please Do not Refresh the page, otherwise you will have to restart the game
+      </Heading>
     </Container >
   );
 };

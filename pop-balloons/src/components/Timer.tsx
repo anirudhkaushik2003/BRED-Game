@@ -66,7 +66,7 @@ const Timer = () => {
   }, [timeLeft]);
 
   return (
-    <Heading as="h2" size="md" mt={5} mb={5}> Time Left: {minutes}:{seconds < 10 ? `0${seconds}` : seconds} </Heading>
+    <Heading as="h1" size="xl" color="blue" mt={5} mb={5}> Time Left: {minutes}:{seconds < 10 ? `0${seconds}` : seconds} </Heading>
   );
 }
 
