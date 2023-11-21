@@ -22,6 +22,7 @@ import {
   SAVE_SCORE,
   SET_FIRST_NAME,
   SET_LAST_NAME,
+  CREATE_POST,
 } from "../actions";
 
 export interface IGlobalState {
@@ -287,6 +288,10 @@ const gameReducer = (state = globalState, action: any) => {
         lastName: action.payload,
       };
 
+    case CREATE_POST:
+      return {
+        ...state,
+      };
 
 
     default:

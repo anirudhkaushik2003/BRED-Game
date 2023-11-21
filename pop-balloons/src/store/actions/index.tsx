@@ -1,3 +1,5 @@
+import * as api from "../../api/index";
+
 export const MOVE_RIGHT = "MOVE_RIGHT";
 export const MOVE_LEFT = "MOVE_LEFT";
 export const MOVE_UP = "MOVE_UP";
@@ -39,6 +41,9 @@ export const SAVE_SCORE = "SAVE_SCORE";
 
 export const SET_FIRST_NAME = "SET_FIRST_NAME";
 export const SET_LAST_NAME = "SET_LAST_NAME";
+
+
+export const CREATE_POST = "CREATE_POST";
 
 
 export interface ISnakeCoord {
@@ -118,3 +123,33 @@ export const set_last_name = (type: string, value: string) => ({
   payload: value
 
 });
+
+// export const create_post = (type: string, value: string) => ({
+//   type: CREATE_POST,
+//   payload: value
+
+// });
+
+export interface IPost {
+  firstName: string;
+  lastName: string;
+
+  game1: number[];
+  game2: number[];
+  game3: number[];
+  game4: number[];
+  game2_opp: number[];
+  game3_opp: number[];
+  game4_opp: number[];
+};
+
+export const createPost = (post:  IPost ) => async (dispatch: any) => {
+  try{
+    const {data} = await api.createPost(post);
+
+    dispatch({type: CREATE_POST, payload: data});
+  }
+  catch(err){
+    console.log(err);
+  }
+};
