@@ -14,7 +14,6 @@ import {
   RESET_SCORE,
   scoreUpdates,
   stopGame,
-  decrementTime,
 } from "../store/actions";
 import { IGlobalState } from "../store/reducers";
 import {

@@ -61,10 +61,27 @@ const gameReducer = (state = globalState, action: any) => {
       };
     }
     case DECREMENT_TIME: {
-      return {
-        ...state,
-        timeLeft: state.timeLeft - 1
-      };
+      if (state.timeLeft == 0 && state.step < 8) {
+        return {
+          ...state,
+          timeLeft: 120, // reset time
+          step: state.step + 1 // move on to next stage
+        };
+      }
+      else if (state.timeLeft == 0) {
+        return {
+          ...state,
+          timeLeft: 120,  // reset time
+        };
+      }
+      else {
+        return {
+          ...state,
+          timeLeft: state.timeLeft - 1
+        };
+
+      }
+
     }
 
     case SET_DIS_DIRECTION:
