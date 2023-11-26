@@ -1,0 +1,154 @@
+Subject Name: pratyaksh gautam
+Game 1 mean: 13.72, std: 8.51
+Game 2 mean: 18.63, std: 10.27
+Game 2 opp mean: 21.94, std: 8.46
+Game 3 mean: 11.62, std: 9.38
+Game 3 opp mean: 10.88, std: 9.13
+Game 4 mean: 19.93, std: 9.68
+Game 4 opp mean: 19.57, std: 9.79
+
+Subject Name: pranjal t
+Game 1 mean: 39.55, std: 22.89
+Game 2 mean: 34.12, std: 19.26
+Game 2 opp mean: 21.77, std: 8.42
+Game 3 mean: 35.80, std: 20.26
+Game 3 opp mean: 47.39, std: 19.72
+Game 4 mean: 36.24, std: 20.12
+Game 4 opp mean: 47.10, std: 19.47
+
+Subject Name: vedansh agrawal
+Game 1 mean: 18.43, std: 10.83
+Game 2 mean: 16.08, std: 9.94
+Game 2 opp mean: 47.26, std: 19.67
+Game 3 mean: 17.95, std: 9.90
+Game 3 opp mean: 21.86, std: 8.39
+Game 4 mean: 24.65, std: 13.79
+Game 4 opp mean: 21.71, std: 8.42
+
+Subject Name: gokulraj r
+Game 1 mean: 19.04, std: 13.09
+Game 2 mean: 19.90, std: 11.04
+Game 2 opp mean: 21.94, std: 8.32
+Game 3 mean: 19.43, std: 11.23
+Game 3 opp mean: 47.20, std: 19.58
+Game 4 mean: 17.18, std: 10.62
+Game 4 opp mean: 47.32, std: 19.65
+
+Subject Name: mugundan kottur suresh
+Game 1 mean: 18.94, std: 10.05
+Game 2 mean: 25.79, std: 15.31
+Game 2 opp mean: 25.11, std: 15.23
+Game 3 mean: 24.72, std: 13.81
+Game 3 opp mean: 47.23, std: 19.70
+Game 4 mean: 21.31, std: 11.35
+Game 4 opp mean: 47.30, std: 19.75
+
+Subject Name: vansh k
+Game 1 mean: 25.87, std: 14.99
+Game 2 mean: 23.88, std: 13.87
+Game 2 opp mean: 21.84, std: 8.35
+Game 3 mean: 29.95, std: 16.84
+Game 3 opp mean: 47.25, std: 19.70
+Game 4 mean: 22.50, std: 12.57
+Game 4 opp mean: 47.34, std: 19.85
+
+Subject Name: aditya harikrish
+Game 1 mean: 24.90, std: 12.50
+Game 2 mean: 17.48, std: 10.10
+Game 2 opp mean: 47.22, std: 19.65
+Game 3 mean: 20.88, std: 12.70
+Game 3 opp mean: 22.02, std: 8.47
+Game 4 mean: 26.23, std: 16.52
+Game 4 opp mean: 21.76, std: 8.27
+
+Subject Name: aaron monis
+Game 1 mean: 25.61, std: 14.56
+Game 2 mean: 21.34, std: 11.81
+Game 2 opp mean: 20.85, std: 12.00
+Game 3 mean: 25.39, std: 15.69
+Game 3 opp mean: 21.99, std: 8.38
+Game 4 mean: 21.09, std: 11.96
+Game 4 opp mean: 22.00, std: 8.42
+
+Subject Name: pradhuman tiwari
+Game 1 mean: 19.00, std: 12.99
+Game 2 mean: 23.55, std: 15.84
+Game 2 opp mean: 47.23, std: 19.61
+Game 3 mean: 20.85, std: 13.58
+Game 3 opp mean: 20.30, std: 13.59
+Game 4 mean: 24.73, std: 15.63
+Game 4 opp mean: 23.94, std: 15.35
+
+Subject Name: sanyam shah
+Game 1 mean: 29.66, std: 16.33
+Game 2 mean: 20.38, std: 12.65
+Game 2 opp mean: 47.11, std: 19.67
+Game 3 mean: 25.03, std: 13.38
+Game 3 opp mean: 24.12, std: 13.23
+Game 4 mean: 23.02, std: 14.92
+Game 4 opp mean: 22.43, std: 14.98
+
+Subject Name: gaurav singh
+Game 1 mean: 20.75, std: 12.24
+Game 2 mean: 26.27, std: 14.15
+Game 2 opp mean: 21.97, std: 8.45
+Game 3 mean: 20.98, std: 12.38
+Game 3 opp mean: 47.05, std: 19.70
+Game 4 mean: 27.12, std: 15.09
+Game 4 opp mean: 47.23, std: 19.76
+
+Subject Name: mihir rawat
+Game 1 mean: 12.97, std: 10.77
+Game 2 mean: 21.27, std: 12.99
+Game 2 opp mean: 47.24, std: 19.73
+Game 3 mean: 20.71, std: 11.25
+Game 3 opp mean: 20.32, std: 11.30
+Game 4 mean: 17.28, std: 8.55
+Game 4 opp mean: 16.73, std: 8.75
+
+Subject Name: lokesh venkatachalam
+Game 1 mean: 20.66, std: 13.01
+Game 2 mean: 15.75, std: 8.43
+Game 2 opp mean: 21.85, std: 8.42
+Game 3 mean: 18.52, std: 11.35
+Game 3 opp mean: 17.81, std: 11.35
+Game 4 mean: 20.47, std: 12.29
+Game 4 opp mean: 19.82, std: 12.29
+
+Subject Name: radheshyam thiyagarajan
+Game 1 mean: 12.73, std: 7.96
+Game 2 mean: 17.21, std: 10.82
+Game 2 opp mean: 16.45, std: 11.19
+Game 3 mean: 15.12, std: 9.69
+Game 3 opp mean: 47.23, std: 19.76
+Game 4 mean: 18.70, std: 11.88
+Game 4 opp mean: 47.17, std: 19.70
+
+Subject Name: sudha tanay doddi
+Game 1 mean: 24.04, std: 12.33
+Game 2 mean: 15.92, std: 9.78
+Game 2 opp mean: 15.37, std: 9.51
+Game 3 mean: 20.96, std: 11.56
+Game 3 opp mean: 47.16, std: 19.73
+Game 4 mean: 25.03, std: 15.09
+Game 4 opp mean: 47.07, std: 19.78
+
+Subject Name: aum khatlawala
+Game 1 mean: 16.81, std: 10.25
+Game 2 mean: 21.46, std: 12.30
+Game 2 opp mean: 47.24, std: 19.75
+Game 3 mean: 23.03, std: 14.04
+Game 3 opp mean: 22.18, std: 14.24
+Game 4 mean: 24.42, std: 14.24
+Game 4 opp mean: 23.87, std: 14.15
+
+Subject Name: yash mehan
+Game 1 mean: 24.27, std: 16.13
+Game 2 mean: 24.30, std: 15.90
+Game 2 opp mean: 47.38, std: 19.52
+Game 3 mean: 25.66, std: 15.41
+Game 3 opp mean: 21.89, std: 8.52
+Game 4 mean: 28.86, std: 18.25
+Game 4 opp mean: 22.10, std: 8.42
+
+
